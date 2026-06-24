@@ -8,7 +8,7 @@ private:
     float lastStopPosition;
     float lastStopTimestamp;
     bool isMoving;
-    bool cranePosition;
+    bool cranePositions;
 
     bool isCraneStopped();
     bool isCraneMoving();
