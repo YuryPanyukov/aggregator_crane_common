@@ -1,21 +1,25 @@
 #include <ctime>
+#include "include/TimedQueue.h"
 
 class MovingState{
 private:
     int timeForFixStopMoving;
     float positionChangeForStop;
     float positionChangeForStart;
-    float lastStopPosition;
-    float lastStopTimestamp;
+    
+    float lastStopPosition = -1.0;
+
+    time_t lastStopTimestampValue;
+    time_t lastStartTimestampValue;
     bool isMoving;
-    bool cranePositions;
+    TimedQueue<float>* cranePositions;
 
     bool isCraneStopped();
     bool isCraneMoving();
     void setLastStopPosition(time_t lastStopTimestamp, float lastStopPosition);
-    bool isMoving();
+    bool getIsMoving();
     float cranePosition();
-    float lastStopPosition();
+    float getLastStopPosition();
     time_t lastStopTimestamp();
 
 public:
