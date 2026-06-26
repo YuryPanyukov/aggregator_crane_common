@@ -1,5 +1,5 @@
 #include <ctime>
-#include "include/TimedQueue.h"
+#include "TimedQueue.h"
 
 class MovingState{
 private:

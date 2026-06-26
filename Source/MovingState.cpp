@@ -7,7 +7,7 @@ MovingState::MovingState(int _timeForFixStopMoving = 10, float _positionChangeFo
     positionChangeForStop = _positionChangeForStop;
     positionChangeForStart = _positionChangeForStart;
 
-    cranePositions = new TimedQueue<float>(timeForFixStopMoving);
+    // cranePositions = new TimedQueue<float>(timeForFixStopMoving);
 
     isMoving = false;
     lastStopTimestampValue = 0.0;
@@ -32,7 +32,7 @@ void MovingState::AddData(time_t timestamp, float cranePosition){
 }
 
 MovingState::~MovingState(){
-    delete cranePositions;
+    // delete cranePositions;
 }
 
 bool MovingState::isCraneStopped(){
